@@ -1,0 +1,38 @@
+.container {
+    display: inline-block;
+}
+
+.comment {
+    margin-bottom: 20px;
+}
+
+.avatar > img {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+}
+
+.content {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+}
+
+.author {
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    color: #000;
+}
+
+.metadata {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.date {
+    font-size: 10px;
+    color: #bbb;
+}
+
