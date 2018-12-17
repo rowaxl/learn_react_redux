@@ -2,9 +2,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CommentDetail from './CommentDetail';
+import ApprovalCard from './ApprovalCard';
 import Faker from 'faker';
 
-
+import 'semantic-ui-css/semantic.min.css';
 
 // Create a react component
 class App extends React.Component {
@@ -44,13 +45,16 @@ class App extends React.Component {
 
         // ループパターン
         const CommentDetailList = commentList.map((prop, i) => {
+            console.log("key", i);
             return (
-                <CommentDetail
-                    key={i}
-                    avatar={prop.avatar}
-                    author={prop.author}
-                    date={prop.date}
-                    content={prop.content} />
+                <ApprovalCard key={i * 65535}>
+                    <CommentDetail
+                        key={i}
+                        avatar={prop.avatar}
+                        author={prop.author}
+                        date={prop.date}
+                        content={prop.content} />
+                </ApprovalCard>
             );
         });
 
