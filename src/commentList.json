@@ -1,0 +1,35 @@
+{
+    "list": [
+
+        {
+            "author": "Amita",
+            "date": "Today, 06:00 PM",
+            "content": "Nice blog post!",
+            "avatar": null
+        },
+        {
+            "author": "Aimin",
+            "date": "Today, 04:00 PM",
+            "content": "Nice start!",
+            "avatar": null
+        },
+        {
+            "author": "Kudo-san",
+            "date": "Yesterday, 11:00 AM",
+            "content": "That awesome! I think you did very good.",
+            "avatar": null
+        },
+        {
+            "author": "OzaPure",
+            "date": "12/16, 10:00 AM",
+            "content": "Another React noob.",
+            "avatar": null
+        },
+        {
+            "author": "Pressure",
+            "date": "12/10, 09:00 PM",
+            "content": "Welcome",
+            "avatar": null
+        }
+    ]
+}
