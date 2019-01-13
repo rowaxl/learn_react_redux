@@ -5,6 +5,7 @@ import CommentDetail from './CommentDetail';
 import ApprovalCard from './ApprovalCard';
 import Faker from 'faker';
 import comments from './commentList.json';
+import Message from './Message';
 
 import 'semantic-ui-css/semantic.min.css';
 
@@ -13,7 +14,6 @@ class App extends React.Component {
     render() {
         // ループパターン
         const CommentDetailList = comments.list.map((prop, i) => {
-            console.log("key", i);
             return (
                 <ApprovalCard key={i * 65535}>
                     <CommentDetail
@@ -27,7 +27,10 @@ class App extends React.Component {
         });
 
         return (
-            <div className="ui container comments" style={{marginTop: "10px"}}>
+            <div className="ui container comments" style={{ marginTop: "10px" }}>
+                <Message
+                    header="Change in Services"
+                    message="We just updated privacy policy."/>
                 {CommentDetailList}
             </div>
         );
