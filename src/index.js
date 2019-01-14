@@ -11,7 +11,23 @@ import 'semantic-ui-css/semantic.min.css';
 
 // Create a react component
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { lat: null, long: null };
+    }
+
     render() {
+        window.navigator.geolocation.getCurrentPosition(
+            (position) => {
+                console.log('position: ', position)
+                this.setState({
+                    lat: position.coords.latitude,
+                    long: position.coords.longitude
+                });
+                console.log(this.state);
+            },
+            (err) => console.log('err: ', err)
+        )
         // ループパターン
         const CommentDetailList = comments.list.map((prop, i) => {
             return (
@@ -30,7 +46,11 @@ class App extends React.Component {
             <div className="ui container comments" style={{ marginTop: "10px" }}>
                 <Message
                     header="Change in Services"
-                    message="We just updated privacy policy."/>
+                    message="We just updated privacy policy." />
+                <div>
+                    <div>Latitude : {this.state.lat}</div>
+                    <div>Longitude : {this.state.long}</div>
+                </div>
                 {CommentDetailList}
             </div>
         );
