@@ -11,24 +11,8 @@ import 'semantic-ui-css/semantic.min.css';
 
 // Create a react component
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { lat: null, long: null };
-    }
-
     render() {
-        window.navigator.geolocation.getCurrentPosition(
-            (position) => {
-                console.log('position: ', position)
-                this.setState({
-                    lat: position.coords.latitude,
-                    long: position.coords.longitude
-                });
-                console.log(this.state);
-            },
-            (err) => console.log('err: ', err)
-        )
-        // ループパターン
+        // mapping pattern
         const CommentDetailList = comments.list.map((prop, i) => {
             return (
                 <ApprovalCard key={i * 65535}>
@@ -47,10 +31,6 @@ class App extends React.Component {
                 <Message
                     header="Change in Services"
                     message="We just updated privacy policy." />
-                <div>
-                    <div>Latitude : {this.state.lat}</div>
-                    <div>Longitude : {this.state.long}</div>
-                </div>
                 {CommentDetailList}
             </div>
         );
